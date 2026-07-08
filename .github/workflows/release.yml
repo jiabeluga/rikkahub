@@ -38,6 +38,10 @@ jobs:
 
       - name: Prepare build files
         run: |
+          export PATH="$PNPM_HOME:$PATH"
+          cd web-ui && pnpm install
+          cd ..
+        
           # 解码base64编码的keystore文件
           echo "${{ secrets.KEY_BASE64 }}" | base64 -d > app/app.key
           
