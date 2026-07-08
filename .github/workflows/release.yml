@@ -28,15 +28,6 @@ jobs:
         with:
           version: 9
 
-      - name: Install Web UI dependencies
-        run: pnpm install
-        working-directory: web-ui
-
-      - name: Build Web UI
-        run: pnpm run build
-        working-directory: web-ui
-
-
       - name: Gradle cache
         uses: actions/cache@v4
         with:
